@@ -12,14 +12,11 @@
 
     <header>
         <h1>Encriptador de Texto</h1>
-        <img class="logo" src="./assets/logo.png" alt="Logo del incriptador de texto">
+        <img class="logo" src="./assets/logo.png" alt="Logo del encriptador de texto">
     </header>
 
-
     <main>
-
         <section>
-
             <form id="textForm">
                 <label for="inputText">Texto a encriptar:</label>
                 <textarea id="inputText" name="inputText" rows="8" cols="40"></textarea>
@@ -30,13 +27,11 @@
 
             <div id="outputTextContainer">
                 <label for="outputText">Texto encriptado/desencriptado:</label>
-                <textarea id="outputText" name="outputText" rows="8" cols="40"></textarea>
+                <textarea id="outputText" name="outputText" rows="8" cols="40" readonly></textarea>
+                <button id="copyButton">Copiar</button>
             </div>
-
         </section>
-
     </main>
-
 
     <footer>
         <p class="copyright">
@@ -45,6 +40,8 @@
         </p>
     </footer>
 
+    <script src="app.js"></script>
 </body>
+
 
 </html>
