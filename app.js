@@ -56,7 +56,6 @@ const copyToClipboard = (text) => {
 // Manejadores de eventos
 document.getElementById('encryptButton').addEventListener('click', () => {
   const inputText = document.getElementById('inputText').value;
-  console.log('Texto de entrada:', inputText); // Agregado para depuración
   if (isEncrypted(inputText)) {
     const decryptedText = decrypText(inputText);
     document.getElementById('outputText').value = decryptedText;
@@ -68,7 +67,6 @@ document.getElementById('encryptButton').addEventListener('click', () => {
 
 document.getElementById('decryptButton').addEventListener('click', () => {
   const outputText = document.getElementById('outputText').value;
-  console.log('Texto de salida:', outputText); // Agregado para depuración
   const decryptedText = decrypText(outputText);
   document.getElementById('outputText').value = decryptedText;
 });
@@ -80,16 +78,18 @@ document.getElementById('copyButton').addEventListener('click', () => {
 
 // Manejador de evento para detectar cambios en el campo de entrada
 document.getElementById('inputText').addEventListener('input', () => {
-  const inputText = document.getElementById('inputText').value.trim(); // Obtén el valor y elimina espacios en blanco
+document.getElementById('inputText').addEventListener('input', () => {
+  const inputText = document.getElementById('inputText').value.trim();
   const decryptButton = document.getElementById('decryptButton');
   const encryptButton = document.getElementById('encryptButton');
 
   // Verificar si el texto está encriptado
   if (isEncrypted(inputText)) {
-    decryptButton.disabled = false; // Habilitar el botón de desencriptar
-    encryptButton.disabled = true; // Deshabilitar el botón de encriptar
+    decryptButton.disabled = false;
+    encryptButton.disabled = true;
   } else {
-    decryptButton.disabled = true; // Deshabilitar el botón de desencriptar
-    encryptButton.disabled = false; // Habilitar el botón de encriptar
+    decryptButton.disabled = true;
+    encryptButton.disabled = false;
   }
+});
 });
