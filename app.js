@@ -73,11 +73,11 @@ document.getElementById('copyButton').addEventListener('click', () => {
 });
 
 // Manejador de evento para detectar cambios en el campo de entrada
-document.getElementById("inputText").addEventListener("input", () => {
-  document.getElementById("inputText").addEventListener("input", () => {
-    const inputText = document.getElementById("inputText").value.trim(); // Obtén el valor y elimina espacios en blanco
-    const decryptButton = document.getElementById("decryptButton");
-    const encryptButton = document.getElementById("encryptButton");
+document.getElementById('inputText').addEventListener('input', () => {
+  document.getElementById('inputText').addEventListener('input', () => {
+    const inputText = document.getElementById('inputText').value.trim(); // Obtén el valor y elimina espacios en blanco
+    const decryptButton = document.getElementById('decryptButton');
+    const encryptButton = document.getElementById('encryptButton');
 
     // Verificar si el texto está encriptado
     if (isEncrypted(inputText)) {
@@ -88,4 +88,10 @@ document.getElementById("inputText").addEventListener("input", () => {
       encryptButton.disabled = false; // Habilitar el botón de encriptar
     }
   });
+});
+
+document.getElementById('clearButton').addEventListener('click', () => {
+  // Limpiar textareas
+  document.getElementById('inputText').value = '';
+  document.getElementById('outputText').value = '';
 });
