@@ -1,6 +1,5 @@
 // Funciones para encriptación y desencriptación del texto
 const encrypText = (text) => {
-  console.log('Texto a encriptar:', text); // Agregado para depuración
   let encryptedText = text
     .replace(/e/g, 'enter')
     .replace(/i/g, 'imes')
@@ -11,20 +10,17 @@ const encrypText = (text) => {
 };
 
 const decrypText = (text) => {
-  console.log('Texto a desencriptar:', text); // Agregado para depuración
   let decryptedText = text
     .replace(/enter/g, 'e')
     .replace(/imes/g, 'i')
     .replace(/ai/g, 'a')
     .replace(/ober/g, 'o')
     .replace(/ufat/g, 'u');
-  console.log('Texto desencriptado:', decryptedText); // Agregado para depuración
   return decryptedText;
 };
 
 // Función para detectar si el texto está encriptado
 const isEncrypted = (text) => {
-  console.log('Texto recibido:', text); // Agregado para depuración
   const encryptionPatterns = ['enter', 'imes', 'ai', 'ober', 'ufat'];
   const cleanedText = text.trim(); // Eliminar espacios al inicio y al final
 
@@ -77,19 +73,19 @@ document.getElementById('copyButton').addEventListener('click', () => {
 });
 
 // Manejador de evento para detectar cambios en el campo de entrada
-document.getElementById('inputText').addEventListener('input', () => {
-document.getElementById('inputText').addEventListener('input', () => {
-  const inputText = document.getElementById('inputText').value.trim();
-  const decryptButton = document.getElementById('decryptButton');
-  const encryptButton = document.getElementById('encryptButton');
+document.getElementById("inputText").addEventListener("input", () => {
+  document.getElementById("inputText").addEventListener("input", () => {
+    const inputText = document.getElementById("inputText").value.trim(); // Obtén el valor y elimina espacios en blanco
+    const decryptButton = document.getElementById("decryptButton");
+    const encryptButton = document.getElementById("encryptButton");
 
-  // Verificar si el texto está encriptado
-  if (isEncrypted(inputText)) {
-    decryptButton.disabled = false;
-    encryptButton.disabled = true;
-  } else {
-    decryptButton.disabled = true;
-    encryptButton.disabled = false;
-  }
-});
+    // Verificar si el texto está encriptado
+    if (isEncrypted(inputText)) {
+      decryptButton.disabled = false; // Habilitar el botón de desencriptar
+      encryptButton.disabled = true; // Deshabilitar el botón de encriptar
+    } else {
+      decryptButton.disabled = true; // Deshabilitar el botón de desencriptar
+      encryptButton.disabled = false; // Habilitar el botón de encriptar
+    }
+  });
 });
