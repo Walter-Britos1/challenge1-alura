@@ -22,7 +22,7 @@
             <div class="main__div">
                 <form class="main__form" id="textForm">
                     <label for="inputText">Texto a encriptar:</label>
-                    <textarea id="inputText" name="inputText" rows="10" cols="90" ></textarea>
+                    <textarea class="text__descrypt" id="inputText" name="inputText" rows="10" cols="90" ></textarea>
                 </form>
                 <div class="button__container">
                     <button class="main__button__encrypt" id="encryptButton">Encriptar</button>
@@ -32,10 +32,10 @@
 
             <div class="output__container" id="outputTextContainer">
                 <label for="outputText">Texto encriptado/desencriptado:</label>
-                <textarea id="outputText" name="outputText" rows="10" cols="70" read></textarea>
+                <textarea class="text__encrypt" id="outputText" name="outputText" rows="10" cols="70" readonly></textarea>
                 <div class="button__container">
-                    <button id="copyButton">Copiar</button>
-                    <button id="clearButton">Limpiar</button>
+                    <button class="copy__button" id="copyButton">Copiar</button>
+                    <button class="clear__button" id="clearButton">Limpiar</button>
                 </div>
             </div>
 
