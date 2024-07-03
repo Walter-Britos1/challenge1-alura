@@ -4,34 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encritador de texto</title>
+    <title>Encriptador de Texto</title>
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>Encriptador de Texto</h1>
-        <img class="logo" src="./assets/logo.png" alt="Logo del encriptador de texto">
+    <header class="header__container">
+        <img class="header__logo" src="./assets/logo.png" alt="Logo del encriptador de texto">
+        <h1 class="header__title">Encriptador de Texto</h1>
     </header>
 
-    <main>
-        <section>
-            <form id="textForm">
-                <label for="inputText">Texto a encriptar:</label>
-                <textarea id="inputText" name="inputText" rows="8" cols="40"></textarea>
-            </form>
+    <main class="main__container">
 
-            <button id="encryptButton">Encriptar</button>
-            <button id="decryptButton" disabled>Desencriptar</button>            
+        <section class="main__content">
 
-            <div id="outputTextContainer">
-                <label for="outputText">Texto encriptado/desencriptado:</label>
-                <textarea id="outputText" name="outputText" rows="8" cols="40" readonly></textarea>
-                <button id="copyButton">Copiar</button>
-                <button id="clearButton">Limpiar</button>
+            <div class="main__div">
+                <form class="main__form" id="textForm">
+                    <label for="inputText">Texto a encriptar:</label>
+                    <textarea id="inputText" name="inputText" rows="10" cols="90" ></textarea>
+                </form>
+                <div class="button__container">
+                    <button class="main__button__encrypt" id="encryptButton">Encriptar</button>
+                    <button class="main__button__descrypt" id="decryptButton" disabled>Desencriptar</button>
+                </div>
             </div>
+
+            <div class="output__container" id="outputTextContainer">
+                <label for="outputText">Texto encriptado/desencriptado:</label>
+                <textarea id="outputText" name="outputText" rows="10" cols="70" read></textarea>
+                <div class="button__container">
+                    <button id="copyButton">Copiar</button>
+                    <button id="clearButton">Limpiar</button>
+                </div>
+            </div>
+
         </section>
+
     </main>
 
     <footer>
