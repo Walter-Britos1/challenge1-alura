@@ -11,7 +11,6 @@
 <body>
 
     <header class="header__container">
-        <img class="header__logo" src="./assets/logo.png" alt="Logo del encriptador de texto">
         <h1 class="header__title">Encriptador de Texto</h1>
     </header>
 
@@ -22,8 +21,18 @@
             <div class="main__div">
                 <form class="main__form" id="textForm">
                     <label for="inputText">Texto a encriptar:</label>
-                    <textarea class="text__descrypt" id="inputText" name="inputText" rows="10" cols="90" ></textarea>
+                    <textarea class="text__descrypt" id="inputText" name="inputText" rows="10" cols="90"></textarea>
                 </form>
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-circle-alert">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" x2="12" y1="8" y2="12" />
+                        <line x1="12" x2="12.01" y1="16" y2="16" />
+                    </svg>
+                    Solo funciona con letras minusculas y sin acentos
+                </span>
                 <div class="button__container">
                     <button class="main__button__encrypt" id="encryptButton">Encriptar</button>
                     <button class="main__button__descrypt" id="decryptButton" disabled>Desencriptar</button>
@@ -32,7 +41,8 @@
 
             <div class="output__container" id="outputTextContainer">
                 <label for="outputText">Texto encriptado/desencriptado:</label>
-                <textarea class="text__encrypt" id="outputText" name="outputText" rows="10" cols="70" readonly></textarea>
+                <textarea class="text__encrypt" id="outputText" name="outputText" rows="10" cols="70"
+                    readonly></textarea>
                 <div class="button__container">
                     <button class="copy__button" id="copyButton">Copiar</button>
                     <button class="clear__button" id="clearButton">Limpiar</button>
