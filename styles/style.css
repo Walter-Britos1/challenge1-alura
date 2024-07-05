@@ -7,6 +7,13 @@
     background-color: rgb(239, 239, 245);
 }
 
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 .header__container {
     display: flex;
     align-items: center;
@@ -16,13 +23,7 @@
 .header__title {
     color: rgba(10, 56, 113, 1);
     margin-left: 10px;
-    margin-bottom: -30px;
-    font-size: 1.5rem;/*16px*/
-    transform: translateX(550px);
-    -webkit-transform: translateX(550px);
-    -moz-transform: translateX(550px);
-    -ms-transform: translateX(550px);
-    -o-transform: translateX(550px);
+    font-size: 1.5rem; /* 16px */
 }
 
 label {
@@ -31,6 +32,7 @@ label {
 }
 
 .main__container {
+    flex: 1;
     padding: 3.3% 4.5%;
     display: flex;
     align-items: center;
@@ -46,16 +48,15 @@ label {
 .main__div {
     display: flex;
     flex-direction: column;
-    gap: 10px; 
+    gap: 10px;
 }
 
 .text__descrypt {
     width: 550px;
-    height: 495px;
-    resize: none; 
-    padding: 10px; 
-    box-sizing: border-box; 
-    vertical-align: top; 
+    height: 400px;
+    resize: none;
+    padding: 10px;
+    vertical-align: top;
     overflow: auto;
     color: rgb(10, 56, 113);
     border: none;
@@ -65,10 +66,9 @@ label {
 
 .text__encrypt {
     width: 550px;
-    height: 530px;
+    height: 100%;
     resize: none;
     padding: 10px;
-    box-sizing: border-box;
     vertical-align: top;
     overflow: auto;
     color: rgb(10, 56, 113);
@@ -76,10 +76,6 @@ label {
     border-radius: 15px;
     outline: none;
     background-color: white;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
     font-size: 1rem; /* 16px */
 }
 
@@ -101,59 +97,66 @@ span svg {
     gap: 10px; 
 }
 
-.main__button__encrypt {
+/* Estilos generales */
+.main__button__encrypt,
+.main__button__descrypt,
+.copy__button,
+.clear__button {
     width: 100px;
     height: 40px;
-    border: none;
     border-radius: 5px;
-    background-color: rgb(10, 56, 113);
-    color: rgb(239, 239, 245);
     cursor: pointer;
+    font-size: 1rem; /* 16px */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.main__button__encrypt:hover {
+/* Botón de encriptar */
+.main__button__encrypt {
+    border: none;
+    background-color: rgb(10, 56, 113);
+    color: rgb(239, 239, 245);
+}
+
+.main__button__encrypt:hover:not(:disabled) {
     background-color: rgba(10, 56, 113, 0.8);
 }
 
+/* Botón de desencriptar */
 .main__button__descrypt {
-    width: 100px;
-    height: 40px;
-    border: 1px solid  rgb(10, 56, 113);
-    border-radius: 5px;
+    border: 1px solid rgb(10, 56, 113);
     background-color: rgb(239, 239, 245);
     color: rgb(10, 56, 113);
-    cursor: pointer;
-    font-size: 1rem; /* 16px */
 }
 
-.main__button__descrypt:hover {
+.main__button__descrypt:hover:not(:disabled) {
     background-color: rgba(239, 239, 245, 0.8);
 }
 
+/* Botones deshabilitados */
+.main__button__encrypt:disabled,
+.main__button__descrypt:disabled {
+    background-color: #cccccc; /* Color de fondo cuando está deshabilitado */
+    color: #666666; /* Color de texto cuando está deshabilitado */
+    border: 1px solid #999999; /* Color de borde cuando está deshabilitado */
+    cursor: not-allowed; /* Cambia el cursor a no permitido */
+}
+
+/* Botón de copiar */
 .copy__button {
-    width: 100px;
-    height: 40px;
     border: none;
-    border-radius: 5px;
     background-color: rgb(10, 56, 113);
     color: rgb(239, 239, 245);
-    cursor: pointer;
-    font-size: 1rem; /* 16px */
 }
 
 .copy__button:hover {
     background-color: rgba(10, 56, 113, 0.8);
 }
 
+/* Botón de limpiar */
 .clear__button {
-    width: 100px;
-    height: 40px;
-    border: 1px solid  rgb(10, 56, 113);
-    border-radius: 5px;
+    border: 1px solid rgb(10, 56, 113);
     background-color: rgb(239, 239, 245);
     color: rgb(10, 56, 113);
-    cursor: pointer;
-    font-size: 1rem; /* 16px */
 }
 
 .clear__button:hover {
@@ -166,13 +169,13 @@ span svg {
     gap: 10px;
 }
 
-.copyright {
-    /* background-color: var(--color--terciario); */
-    padding: 6px;
-    /* color: var(--color--primario); */
+footer {
+    padding: 10px;
+    background-color: #f1f1f1;
     text-align: center;
-    /* font-family: var(--font-secondary); */
+}
+
+.copyright {
     font-size: 0.8rem;
     font-weight: 500;
-    gap: -12px;
 }
