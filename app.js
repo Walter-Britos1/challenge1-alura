@@ -49,22 +49,43 @@ const copyToClipboard = (text) => {
   );
 };
 
+// Función para mostrar el spinner
+const showSpinner = () => {
+  document.getElementById('spinner').style.display = 'block';
+};
+
+// Función para ocultar el spinner
+const hideSpinner = () => {
+  document.getElementById('spinner').style.display = 'none';
+};
+
+
 // Manejadores de eventos
 document.getElementById('encryptButton').addEventListener('click', () => {
   const inputText = document.getElementById('inputText').value;
-  if (isEncrypted(inputText)) {
-    const decryptedText = decrypText(inputText);
-    document.getElementById('outputText').value = decryptedText;
-  } else {
-    const encryptedText = encrypText(inputText);
-    document.getElementById('outputText').value = encryptedText;
-  }
+  document.getElementById('outputText').value = '';
+  showSpinner();
+  setTimeout(() => {
+    if (isEncrypted(inputText)) {
+      const decryptedText = decrypText(inputText);
+      document.getElementById('outputText').value = decryptedText;
+    } else {
+      const encryptedText = encrypText(inputText);
+      document.getElementById('outputText').value = encryptedText;
+    }
+    hideSpinner();
+  }, 2000); // Simula un retraso de 2 segundos
 });
 
 document.getElementById('decryptButton').addEventListener('click', () => {
   const outputText = document.getElementById('outputText').value;
-  const decryptedText = decrypText(outputText);
-  document.getElementById('outputText').value = decryptedText;
+  document.getElementById('outputText').value = '';
+  showSpinner();
+  setTimeout(() => {
+    const decryptedText = decrypText(outputText);
+    document.getElementById('outputText').value = decryptedText;
+    hideSpinner();
+  }, 2000); // Simula un retraso de 2 segundos
 });
 
 document.getElementById('copyButton').addEventListener('click', () => {
