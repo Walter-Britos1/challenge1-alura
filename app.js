@@ -31,7 +31,7 @@ const isEncrypted = (text) => {
   const encrypted = encryptionPatterns.some((pattern) =>
     lowerCaseText.includes(pattern)
   );
-  console.log('¿Está encriptado?', encrypted); // Agregado para depuración
+
   return encrypted;
 };
 
@@ -94,4 +94,7 @@ document.getElementById('clearButton').addEventListener('click', () => {
   // Limpiar textareas
   document.getElementById('inputText').value = '';
   document.getElementById('outputText').value = '';
+
+  // Volver a habilitar el boton de encriptar
+  document.getElementById('encryptButton').disabled = false;
 });
