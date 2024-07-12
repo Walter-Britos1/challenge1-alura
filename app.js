@@ -73,6 +73,17 @@ const hideSpinner = () => {
 // Manejadores de eventos
 document.getElementById('encryptButton').addEventListener('click', () => {
   const inputText = document.getElementById('inputText').value;
+
+   // Verificar si el texto está en mayúsculas
+  if (inputText === inputText.toUpperCase()) {
+    const warningSpan = document.querySelector('.main__div span');
+    warningSpan.classList.add('warning', 'zoom'); // Añadir clases de animación
+    setTimeout(() => {
+      warningSpan.classList.remove('warning', 'zoom'); // Quitar clases después de la animación
+    }, 800);
+  }
+  
+
   document.getElementById('outputText').value = '';
   showSpinner();
   setTimeout(() => {
@@ -84,9 +95,10 @@ document.getElementById('encryptButton').addEventListener('click', () => {
       document.getElementById('outputText').value = encryptedText;
     }
     hideSpinner();
-  }, 2000); // Simula un retraso de 2 segundos
+  }, 2000); 
 });
 
+// Manejadores de eventos
 document.getElementById('decryptButton').addEventListener('click', () => {
   const outputText = document.getElementById('outputText').value;
   document.getElementById('outputText').value = '';
@@ -95,7 +107,7 @@ document.getElementById('decryptButton').addEventListener('click', () => {
     const decryptedText = decrypText(outputText);
     document.getElementById('outputText').value = decryptedText;
     hideSpinner();
-  }, 2000); // Simula un retraso de 2 segundos
+  }, 2000); 
 });
 
 document.getElementById('copyButton').addEventListener('click', () => {
@@ -112,11 +124,11 @@ document.getElementById('inputText').addEventListener('input', () => {
 
     // Verificar si el texto está encriptado
     if (isEncrypted(inputText)) {
-      decryptButton.disabled = false; // Habilitar el botón de desencriptar
-      encryptButton.disabled = true; // Deshabilitar el botón de encriptar
+      decryptButton.disabled = false; 
+      encryptButton.disabled = true; 
     } else {
-      decryptButton.disabled = true; // Deshabilitar el botón de desencriptar
-      encryptButton.disabled = false; // Habilitar el botón de encriptar
+      decryptButton.disabled = true; 
+      encryptButton.disabled = false; 
     }
   });
 });
