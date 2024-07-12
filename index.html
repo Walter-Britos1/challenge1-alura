@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador de Texto</title>
@@ -9,7 +10,7 @@
     <link rel="shortcut icon" href="./assets/logo.png" />
 
     <meta name="description" content="Una herramienta para encriptar y desencriptar texto de forma sencilla y rápida.">
-    
+
     <meta property="og:title" content="Encriptador de Texto" />
     <meta property="og:image" content="https://encryptor-text.vercel.app//assets/preview.png" />
     <meta property="og:url" content="https://encryptor-text.vercel.app/" />
@@ -18,9 +19,11 @@
 </head>
 
 <body>
+    
     <div class="wrapper">
         <header class="header__container">
             <h1 class="header__title">Encriptador de Texto</h1>
+            <div class="notification" id="notification"></div>
         </header>
 
         <main class="main__container">
@@ -40,7 +43,7 @@
                         </svg>
                         Solo funciona con letras minusculas y sin acentos
                     </span>
-                    
+
                     <div class="button__container">
                         <button class="main__button__encrypt" id="encryptButton">Encriptar</button>
                         <button class="main__button__descrypt" id="decryptButton" disabled>Desencriptar</button>
@@ -49,7 +52,7 @@
 
                 <div class="output__container" id="outputTextContainer">
                     <label for="outputText">Texto encriptado/desencriptado:</label>
-                    <div class="spinner" id="spinner" ></div>
+                    <div class="spinner" id="spinner"></div>
                     <textarea class="text__encrypt" id="outputText" name="outputText" rows="10" cols="70"
                         readonly></textarea>
                     <div class="button__container">
