@@ -35,16 +35,26 @@ const isEncrypted = (text) => {
   return encrypted;
 };
 
+// Función para mostrar la notificación
+const showNotification = (message) => {
+  const notification = document.getElementById('notification');
+  notification.textContent = message;
+  notification.classList.add('show');
+  setTimeout(() => {
+    notification.classList.remove('show');
+  }, 2000);
+};
+
 // Función para copiar texto al portapapeles
 const copyToClipboard = (text) => {
   navigator.clipboard.writeText(text).then(
     () => {
-      alert('Texto copiado al portapapeles');
+      showNotification('Texto copiado al portapapeles');
       // Limpiar textareas
       document.getElementById('inputText').value = '';
     },
     () => {
-      alert('Error al copiar el texto');
+      showNotification('Error al copiar el texto');
     }
   );
 };
