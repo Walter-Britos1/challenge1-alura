@@ -69,21 +69,39 @@ const hideSpinner = () => {
   document.getElementById('spinner').style.display = 'none';
 };
 
-
 // Manejadores de eventos
 document.getElementById('encryptButton').addEventListener('click', () => {
-  const inputText = document.getElementById('inputText').value;
+  const inputText = document.getElementById('inputText').value.trim();
 
-   // Verificar si el texto está en mayúsculas
+  // Ocultar todos los mensajes de error
+  const warningSpan = document.querySelector('.main__div span');
+  const emptyTextWarning = document.getElementById('emptyTextWarning');
+  warningSpan.classList.remove('show', 'warning', 'zoom');
+  emptyTextWarning.classList.remove('show');
+
+  // Verificar si el campo de entrada está vacío
+  if (inputText === '') {
+    emptyTextWarning.classList.add('show');
+
+    // Ocultar el mensaje después de un tiempo
+    setTimeout(() => {
+      emptyTextWarning.classList.remove('show');
+    }, 2000);
+
+    return; // Detener la ejecución si no hay texto
+  }
+
+  // Verificar si el texto está en mayúsculas
   if (inputText === inputText.toUpperCase()) {
-    const warningSpan = document.querySelector('.main__div span');
     warningSpan.classList.add('warning', 'zoom'); // Añadir clases de animación
     setTimeout(() => {
       warningSpan.classList.remove('warning', 'zoom'); // Quitar clases después de la animación
     }, 800);
-  }
-  
 
+    return; // Detener la ejecución si el texto está en mayúsculas
+  }
+
+  // Continuar con la encriptación/desencriptación si no hay errores
   document.getElementById('outputText').value = '';
   showSpinner();
   setTimeout(() => {
@@ -95,8 +113,9 @@ document.getElementById('encryptButton').addEventListener('click', () => {
       document.getElementById('outputText').value = encryptedText;
     }
     hideSpinner();
-  }, 2000); 
+  }, 2000);
 });
+
 
 // Manejadores de eventos
 document.getElementById('decryptButton').addEventListener('click', () => {
@@ -107,7 +126,7 @@ document.getElementById('decryptButton').addEventListener('click', () => {
     const decryptedText = decrypText(outputText);
     document.getElementById('outputText').value = decryptedText;
     hideSpinner();
-  }, 2000); 
+  }, 2000);
 });
 
 document.getElementById('copyButton').addEventListener('click', () => {
@@ -124,11 +143,11 @@ document.getElementById('inputText').addEventListener('input', () => {
 
     // Verificar si el texto está encriptado
     if (isEncrypted(inputText)) {
-      decryptButton.disabled = false; 
-      encryptButton.disabled = true; 
+      decryptButton.disabled = false;
+      encryptButton.disabled = true;
     } else {
-      decryptButton.disabled = true; 
-      encryptButton.disabled = false; 
+      decryptButton.disabled = true;
+      encryptButton.disabled = false;
     }
   });
 });
