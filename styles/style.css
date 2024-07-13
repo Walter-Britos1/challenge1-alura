@@ -273,6 +273,25 @@ footer {
   }
 }
 
+.empty-text-warning {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 0, 0, 0.1);
+  color: rgb(255, 0, 0);
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 111; 
+}
+
+.empty-text-warning.show {
+  display: block;
+}
+
+
 /* Media Queries para Tablets */
 @media (max-width: 1200px) {
   .main__container,
@@ -325,5 +344,10 @@ footer {
     width: 40%;
     max-width: 100%;
     left: 30%;
+  }
+
+  .empty-text-warning {
+    left: 45%;
+    top: 48%;
   }
 }
