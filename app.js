@@ -59,6 +59,7 @@ const copyToClipboard = (text) => {
 // Función para mostrar el spinner
 const showSpinner = () => {
   document.getElementById('spinner').style.display = 'block';
+  document.getElementById('outputText').placeolder = '';
 };
 
 // Función para ocultar el spinner
