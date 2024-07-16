@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    
+
     <div class="wrapper">
         <header class="header__container">
             <h1 class="header__title">Encriptador de Texto</h1>
@@ -30,8 +30,9 @@
             <section class="main__content">
                 <div class="main__div">
                     <form class="main__form" id="textForm">
-                        <label for="inputText">Texto a encriptar/desencriptar:</label>
-                        <textarea class="text__descrypt" id="inputText" name="inputText" rows="10" cols="90"></textarea>
+                        <label for="inputText"></label>
+                        <textarea class="text__descrypt" id="inputText" name="inputText" rows="10" cols="90"
+                            placeholder="Texto a encriptar/desencriptar:"></textarea>
                     </form>
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="24" viewBox="0 0 24 24" fill="none"
@@ -51,9 +52,10 @@
                 </div>
 
                 <div class="output__container" id="outputTextContainer">
-                    <label for="outputText">Texto encriptado/desencriptado:</label>
+                    <label for="outputText"></label>
                     <div class="spinner" id="spinner"></div>
-                    <textarea class="text__encrypt" id="outputText" name="outputText" rows="10" cols="70" readonly></textarea>
+                    <textarea class="text__encrypt" id="outputText" name="outputText" rows="10" cols="70"
+                        placeholder="Texto encriptado/desencriptado:" readonly></textarea>
                     <div id="emptyTextWarning" class="empty-text-warning">
                         No se detectó ningún texto para encriptar.
                     </div>
