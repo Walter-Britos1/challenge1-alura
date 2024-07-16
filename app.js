@@ -65,7 +65,6 @@ const showSpinner = () => {
 // Función para ocultar el spinner
 const hideSpinner = () => {
   document.getElementById('spinner').style.display = 'none';
-  document.getElementById('outputText').placeholder = 'Texto encriptado/desencriptado:';
 };
 
 // Manejadores de eventos
@@ -81,6 +80,7 @@ document.getElementById('encryptButton').addEventListener('click', () => {
   // Verificar si el campo de entrada está vacío
   if (inputText === '') {
     emptyTextWarning.classList.add('show');
+    document.getElementById('outputText').placeholder = '';
 
     // Ocultar el mensaje después de un tiempo
     setTimeout(() => {
