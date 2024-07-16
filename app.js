@@ -59,12 +59,13 @@ const copyToClipboard = (text) => {
 // Función para mostrar el spinner
 const showSpinner = () => {
   document.getElementById('spinner').style.display = 'block';
-  document.getElementById('outputText').placeolder = '';
+  document.getElementById('outputText').placeholder = '';
 };
 
 // Función para ocultar el spinner
 const hideSpinner = () => {
   document.getElementById('spinner').style.display = 'none';
+  document.getElementById('outputText').placeholder = 'Texto encriptado/desencriptado:';
 };
 
 // Manejadores de eventos
