@@ -1,4 +1,4 @@
-let placeholder = document.getElementById('outputText').placeholder = 'Texto encriptado/desencriptado:';
+let placeholder = 'Texto encriptado/desencriptado:';
 
 // Funciones para encriptación y desencriptación del texto
 const encrypText = (text) => {
@@ -87,7 +87,7 @@ document.getElementById('encryptButton').addEventListener('click', () => {
     // Ocultar el mensaje después de un tiempo
     setTimeout(() => {
       emptyTextWarning.classList.remove('show');
-      placeholder
+       document.getElementById('outputText').placeholder = placeholder
     }, 2000);
 
     return; // Detener la ejecución si no hay texto
@@ -161,5 +161,5 @@ document.getElementById('clearButton').addEventListener('click', () => {
 
   // Volver a habilitar el boton de encriptar
   document.getElementById('encryptButton').disabled = false;
-  placeholder
+   document.getElementById('outputText').placeholder = placeholder;
 });
