@@ -24,9 +24,6 @@ const isEncrypted = (text) => {
   const encryptionPatterns = ['enter', 'imes', 'ai', 'ober', 'ufat'];
   const cleanedText = text.trim(); // Eliminar espacios al inicio y al final
 
-  // Convertir el texto a minúsculas para la comparación
-  // const lowerCaseText = cleanedText.toLowerCase();
-
   // Verificar si alguna de las cadenas de encriptación está presente en el texto en minúsculas
   const encrypted = encryptionPatterns.some((pattern) =>
     cleanedText.includes(pattern)
