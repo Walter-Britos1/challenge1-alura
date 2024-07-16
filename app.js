@@ -85,6 +85,7 @@ document.getElementById('encryptButton').addEventListener('click', () => {
     // Ocultar el mensaje después de un tiempo
     setTimeout(() => {
       emptyTextWarning.classList.remove('show');
+      document.getElementById('outputText').placeholder = 'Texto encriptado/desencriptado:';
     }, 2000);
 
     return; // Detener la ejecución si no hay texto
